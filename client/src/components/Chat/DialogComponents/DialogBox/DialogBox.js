@@ -13,7 +13,7 @@ const DialogBox = props => {
     catalogOperation,
     goToExpandedDialog,
     chatMode,
-    interlocutor,
+    interlocutor
   } = props;
   const {
     favoriteList,
@@ -21,7 +21,7 @@ const DialogBox = props => {
     blackList,
     _id,
     text,
-    createAt,
+    createAt
   } = chatPreview;
   const isFavorite = favoriteList[participants.indexOf(userId)];
   const isBlocked = blackList[participants.indexOf(userId)];
@@ -35,8 +35,8 @@ const DialogBox = props => {
             participants,
             _id,
             blackList,
-            favoriteList,
-          },
+            favoriteList
+          }
         })
       }
     >
@@ -62,14 +62,14 @@ const DialogBox = props => {
               changeFavorite(
                 {
                   participants,
-                  favoriteFlag: !isFavorite,
+                  favoriteFlag: !isFavorite
                 },
                 event
               )
             }
             className={classNames({
               'far fa-heart': !isFavorite,
-              'fas fa-heart': isFavorite,
+              'fas fa-heart': isFavorite
             })}
           />
           <i
@@ -77,14 +77,14 @@ const DialogBox = props => {
               changeBlackList(
                 {
                   participants,
-                  blackListFlag: !isBlocked,
+                  blackListFlag: !isBlocked
                 },
                 event
               )
             }
             className={classNames({
               'fas fa-user-lock': !isBlocked,
-              'fas fa-unlock': isBlocked,
+              'fas fa-unlock': isBlocked
             })}
           />
           <i
@@ -93,7 +93,7 @@ const DialogBox = props => {
               'far fa-plus-square':
                 chatMode !== CONSTANTS.CATALOG_PREVIEW_CHAT_MODE,
               'fas fa-minus-circle':
-                chatMode === CONSTANTS.CATALOG_PREVIEW_CHAT_MODE,
+                chatMode === CONSTANTS.CATALOG_PREVIEW_CHAT_MODE
             })}
           />
         </div>

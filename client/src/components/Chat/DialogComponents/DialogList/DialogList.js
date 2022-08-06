@@ -6,7 +6,7 @@ import {
   goToExpandedDialog,
   changeChatFavorite,
   changeChatBlock,
-  changeShowAddChatToCatalogMenu,
+  changeShowAddChatToCatalogMenu
 } from '../../../../actions/actionCreator';
 import DialogBox from '../DialogBox/DialogBox';
 import styles from './DialogList.module.sass';
@@ -49,7 +49,7 @@ const DialogList = props => {
       goToExpandedDialog,
       chatMode,
       removeChat,
-      interlocutor,
+      interlocutor
     } = props;
     preview.forEach((chatPreview, index) => {
       const dialogNode = (
@@ -85,10 +85,8 @@ const DialogList = props => {
 
   const renderChatPreview = () => {
     const { chatMode } = props;
-    if (chatMode === CONSTANTS.FAVORITE_PREVIEW_CHAT_MODE)
-      return renderPreview(onlyFavoriteDialogs);
-    if (chatMode === CONSTANTS.BLOCKED_PREVIEW_CHAT_MODE)
-      return renderPreview(onlyBlockDialogs);
+    if (chatMode === CONSTANTS.FAVORITE_PREVIEW_CHAT_MODE) { return renderPreview(onlyFavoriteDialogs); }
+    if (chatMode === CONSTANTS.BLOCKED_PREVIEW_CHAT_MODE) { return renderPreview(onlyBlockDialogs); }
     return renderPreview();
   };
 
@@ -102,7 +100,7 @@ const mapDispatchToProps = dispatch => ({
   changeChatFavorite: data => dispatch(changeChatFavorite(data)),
   changeChatBlock: data => dispatch(changeChatBlock(data)),
   changeShowAddChatToCatalogMenu: data =>
-    dispatch(changeShowAddChatToCatalogMenu(data)),
+    dispatch(changeShowAddChatToCatalogMenu(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DialogList);

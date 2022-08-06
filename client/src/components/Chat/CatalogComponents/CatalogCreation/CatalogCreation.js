@@ -5,7 +5,7 @@ import CONSTANTS from '../../../../constants';
 import {
   changeTypeOfChatAdding,
   changeShowAddChatToCatalogMenu,
-  getCatalogList,
+  getCatalogList
 } from '../../../../actions/actionCreator';
 import styles from './CatalogCreation.module.sass';
 import AddToCatalog from '../AddToCatalog/AddToCatalog';
@@ -21,11 +21,11 @@ class CatalogCreation extends React.Component {
       changeTypeOfChatAdding,
       catalogCreationMode,
       changeShowAddChatToCatalogMenu,
-      isFetching,
+      isFetching
     } = this.props;
     const {
       ADD_CHAT_TO_OLD_CATALOG,
-      CREATE_NEW_CATALOG_AND_ADD_CHAT,
+      CREATE_NEW_CATALOG_AND_ADD_CHAT
     } = CONSTANTS;
     return (
       <>
@@ -40,7 +40,7 @@ class CatalogCreation extends React.Component {
                 onClick={() => changeTypeOfChatAdding(ADD_CHAT_TO_OLD_CATALOG)}
                 className={classNames({
                   [styles.active]:
-                    catalogCreationMode === ADD_CHAT_TO_OLD_CATALOG,
+                    catalogCreationMode === ADD_CHAT_TO_OLD_CATALOG
                 })}
               >
                 Old
@@ -51,7 +51,7 @@ class CatalogCreation extends React.Component {
                 }
                 className={classNames({
                   [styles.active]:
-                    catalogCreationMode === CREATE_NEW_CATALOG_AND_ADD_CHAT,
+                    catalogCreationMode === CREATE_NEW_CATALOG_AND_ADD_CHAT
                 })}
               >
                 New
@@ -75,7 +75,7 @@ const mapDispatchToProps = dispatch => ({
   changeTypeOfChatAdding: data => dispatch(changeTypeOfChatAdding(data)),
   changeShowAddChatToCatalogMenu: () =>
     dispatch(changeShowAddChatToCatalogMenu()),
-  getCatalogList: () => dispatch(getCatalogList()),
+  getCatalogList: () => dispatch(getCatalogList())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CatalogCreation);

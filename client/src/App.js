@@ -56,7 +56,7 @@ class App extends Component {
             path='/startContest/nameContest'
             component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.NAME_CONTEST,
-              title: 'Company Name',
+              title: 'Company Name'
             })}
           />
           <Route
@@ -64,7 +64,7 @@ class App extends Component {
             path='/startContest/taglineContest'
             component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.TAGLINE_CONTEST,
-              title: 'TAGLINE',
+              title: 'TAGLINE'
             })}
           />
           <Route
@@ -72,7 +72,7 @@ class App extends Component {
             path='/startContest/logoContest'
             component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.LOGO_CONTEST,
-              title: 'LOGO',
+              title: 'LOGO'
             })}
           />
           <Route exact path='/dashboard' component={withAuth(Dashboard)} />

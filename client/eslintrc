@@ -9,7 +9,7 @@
   "plugins": [
     "jest"
   ],
-  "extends": "eslint-config-airbnb",
+  "extends": "eslint-config-semistandard",
   "parser": "babel-eslint",
   "rules": {
     "react/jsx-filename-extension": [

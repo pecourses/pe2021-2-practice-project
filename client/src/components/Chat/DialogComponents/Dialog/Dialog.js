@@ -4,7 +4,7 @@ import moment from 'moment';
 import className from 'classnames';
 import {
   getDialogMessages,
-  clearMessageList,
+  clearMessageList
 } from '../../../../actions/actionCreator';
 import ChatHeader from '../../ChatComponents/ChatHeader/ChatHeader';
 import styles from './Dialog.module.sass';
@@ -23,8 +23,7 @@ class Dialog extends React.Component {
   };
 
   componentWillReceiveProps (nextProps, nextContext) {
-    if (nextProps.interlocutor.id !== this.props.interlocutor.id)
-      this.props.getDialog({ interlocutorId: nextProps.interlocutor.id });
+    if (nextProps.interlocutor.id !== this.props.interlocutor.id) { this.props.getDialog({ interlocutorId: nextProps.interlocutor.id }); }
   }
 
   componentWillUnmount () {
@@ -100,7 +99,7 @@ const mapStateToProps = state => state.chatStore;
 
 const mapDispatchToProps = dispatch => ({
   getDialog: data => dispatch(getDialogMessages(data)),
-  clearMessageList: () => dispatch(clearMessageList()),
+  clearMessageList: () => dispatch(clearMessageList())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dialog);

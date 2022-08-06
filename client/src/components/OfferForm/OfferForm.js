@@ -18,7 +18,7 @@ const OfferForm = props => {
           classes={{
             uploadContainer: styles.imageUploadContainer,
             inputContainer: styles.uploadInputContainer,
-            imgStyle: styles.imgStyle,
+            imgStyle: styles.imgStyle
           }}
         />
       );
@@ -30,7 +30,7 @@ const OfferForm = props => {
           container: styles.inputContainer,
           input: styles.input,
           warning: styles.fieldWarning,
-          notValid: styles.notValid,
+          notValid: styles.notValid
         }}
         type='text'
         label='your suggestion'
@@ -67,7 +67,7 @@ const OfferForm = props => {
       <Formik
         onSubmit={setOffer}
         initialValues={{
-          offerData: '',
+          offerData: ''
         }}
         validationSchema={validationSchema}
       >
@@ -86,7 +86,7 @@ const OfferForm = props => {
 
 const mapDispatchToProps = dispatch => ({
   setNewOffer: data => dispatch(setOffer(data)),
-  clearOfferError: () => dispatch(clearAddOfferError()),
+  clearOfferError: () => dispatch(clearAddOfferError())
 });
 
 const mapStateToProps = state => {

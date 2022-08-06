@@ -11,7 +11,7 @@ const SelectInput = ({
   const {
     form: { setFieldValue },
     meta: { initialValue },
-    field,
+    field
   } = props;
 
   const getOptionsArray = () => {

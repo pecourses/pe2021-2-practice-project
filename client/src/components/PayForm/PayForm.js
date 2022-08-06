@@ -27,7 +27,7 @@ const PayForm = props => {
           name: '',
           number: '',
           cvc: '',
-          expiry: '',
+          expiry: ''
         }}
         onSubmit={pay}
         validationSchema={Schems.PaymentSchema}
@@ -55,7 +55,7 @@ const PayForm = props => {
                       container: styles.inputContainer,
                       input: styles.input,
                       notValid: styles.notValid,
-                      error: styles.error,
+                      error: styles.error
                     }}
                     type='text'
                     label='name'
@@ -71,7 +71,7 @@ const PayForm = props => {
                         container: styles.inputContainer,
                         input: styles.input,
                         notValid: styles.notValid,
-                        error: styles.error,
+                        error: styles.error
                       }}
                       type='text'
                       label='sum'
@@ -88,7 +88,7 @@ const PayForm = props => {
                       container: styles.inputContainer,
                       input: styles.input,
                       notValid: styles.notValid,
-                      error: styles.error,
+                      error: styles.error
                     }}
                     type='text'
                     label='card number'
@@ -106,7 +106,7 @@ const PayForm = props => {
                         container: styles.inputContainer,
                         input: styles.input,
                         notValid: styles.notValid,
-                        error: styles.error,
+                        error: styles.error
                       }}
                       type='text'
                       label='expiry'
@@ -123,7 +123,7 @@ const PayForm = props => {
                         container: styles.inputContainer,
                         input: styles.input,
                         notValid: styles.notValid,
-                        error: styles.error,
+                        error: styles.error
                       }}
                       type='text'
                       label='cvc'
@@ -156,7 +156,7 @@ const PayForm = props => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  changeFocusOnCard: data => dispatch(changeFocusOnCard(data)),
+  changeFocusOnCard: data => dispatch(changeFocusOnCard(data))
 });
 
 export default connect(null, mapDispatchToProps)(PayForm);

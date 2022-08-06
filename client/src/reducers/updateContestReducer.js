@@ -3,7 +3,7 @@ import ACTION from '../actions/actionTypes';
 const initialState = {
   isFetching: true,
   error: null,
-  data: null,
+  data: null
 };
 
 export default function (state = initialState, action) {
@@ -12,21 +12,21 @@ export default function (state = initialState, action) {
       return {
         isFetching: true,
         error: null,
-        data: null,
+        data: null
       };
     }
     case ACTION.UPDATE_CONTEST_SUCCESS: {
       return {
         isFetching: false,
         error: null,
-        data: action.data,
+        data: action.data
       };
     }
     case ACTION.UPDATE_CONTEST_ERROR: {
       return {
         isFetching: false,
         error: action.error,
-        data: null,
+        data: null
       };
     }
     case ACTION.CLEAR_UPDATE_CONTEST_STORE: {

@@ -25,9 +25,9 @@ const Payment = props => {
     data.append('price', '100');
     props.pay({
       data: {
-        formData: data,
+        formData: data
       },
-      history: props.history,
+      history: props.history
     });
   };
 
@@ -80,12 +80,12 @@ const Payment = props => {
 
 const mapStateToProps = state => ({
   payment: state.payment,
-  contestStore: state.contestStore,
+  contestStore: state.contestStore
 });
 
 const mapDispatchToProps = dispatch => ({
   pay: ({ data, history }) => dispatch(payRequest(data, history)),
-  clearPaymentStore: () => dispatch(clearPaymentStore()),
+  clearPaymentStore: () => dispatch(clearPaymentStore())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Payment);

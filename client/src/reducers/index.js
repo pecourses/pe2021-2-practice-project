@@ -22,7 +22,7 @@ const appReducer = combineReducers({
   bundleStore: bundleReducer,
   updateContestStore: updateContestReducer,
   chatStore: chatReducer,
-  userProfile: userProfileReducer,
+  userProfile: userProfileReducer
 });
 
 export default appReducer;

@@ -34,7 +34,7 @@ const UpdateUserInfoForm = props => {
               container: styles.inputContainer,
               input: styles.input,
               warning: styles.error,
-              notValid: styles.notValid,
+              notValid: styles.notValid
             }}
           />
         </div>
@@ -48,7 +48,7 @@ const UpdateUserInfoForm = props => {
               container: styles.inputContainer,
               input: styles.input,
               warning: styles.error,
-              notValid: styles.notValid,
+              notValid: styles.notValid
             }}
           />
         </div>
@@ -62,7 +62,7 @@ const UpdateUserInfoForm = props => {
               container: styles.inputContainer,
               input: styles.input,
               warning: styles.error,
-              notValid: styles.notValid,
+              notValid: styles.notValid
             }}
           />
         </div>
@@ -71,7 +71,7 @@ const UpdateUserInfoForm = props => {
           classes={{
             uploadContainer: styles.imageUploadContainer,
             inputContainer: styles.uploadInputContainer,
-            imgStyle: styles.imgStyle,
+            imgStyle: styles.imgStyle
           }}
         />
         <button type='submit' disabled={submitting}>
@@ -89,13 +89,13 @@ const mapStateToProps = state => {
     initialValues: {
       firstName: data.firstName,
       lastName: data.lastName,
-      displayName: data.displayName,
-    },
+      displayName: data.displayName
+    }
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  clearUserError: () => dispatch(clearUserError()),
+  clearUserError: () => dispatch(clearUserError())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UpdateUserInfoForm);

@@ -7,7 +7,7 @@ const withNotAuth = Component => {
   const mapStateToProps = state => state.userStore;
 
   const mapDispatchToProps = dispatch => ({
-    checkAuth: data => dispatch(onlyForNotAuthorize(data)),
+    checkAuth: data => dispatch(onlyForNotAuthorize(data))
   });
 
   class HocForLoginSignUp extends React.Component {

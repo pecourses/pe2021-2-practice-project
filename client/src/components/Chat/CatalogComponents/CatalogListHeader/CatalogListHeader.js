@@ -4,7 +4,7 @@ import { Formik, Form } from 'formik';
 import {
   changeShowModeCatalog,
   changeRenameCatalogMode,
-  changeCatalogName,
+  changeCatalogName
 } from '../../../../actions/actionCreator';
 import styles from './CatalogHeader.module.sass';
 import FormInput from '../../../FormInput/FormInput';
@@ -19,7 +19,7 @@ const CatalogListHeader = props => {
     catalogName,
     changeShowModeCatalog,
     changeRenameCatalogMode,
-    isRenameCatalog,
+    isRenameCatalog
   } = props;
   return (
     <div className={styles.headerContainer}>
@@ -50,7 +50,7 @@ const CatalogListHeader = props => {
                   container: styles.inputContainer,
                   input: styles.input,
                   warning: styles.fieldWarning,
-                  notValid: styles.notValid,
+                  notValid: styles.notValid
                 }}
                 type='text'
                 label='Catalog Name'
@@ -72,15 +72,15 @@ const mapStateToProps = state => {
     catalogName,
     isRenameCatalog,
     initialValues: {
-      catalogName,
-    },
+      catalogName
+    }
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   changeShowModeCatalog: () => dispatch(changeShowModeCatalog()),
   changeRenameCatalogMode: () => dispatch(changeRenameCatalogMode()),
-  changeCatalogName: data => dispatch(changeCatalogName(data)),
+  changeCatalogName: data => dispatch(changeCatalogName(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CatalogListHeader);

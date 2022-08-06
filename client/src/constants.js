@@ -4,7 +4,7 @@ const serverPort = 5000;
 
 const CONSTANTS = {
   CONTACT_INFO: {
-    TEL: '(877)355-3585',
+    TEL: '(877)355-3585'
   },
   CUSTOMER: 'customer',
   CREATOR: 'creator',
@@ -43,12 +43,12 @@ const CONSTANTS = {
     'a Business',
     'an App',
     'a Product',
-    'a Startup',
+    'a Startup'
   ],
   FooterItems: [
     {
       title: 'SQUADHELP',
-      items: ['About', 'Contact', 'How It Works?', 'Testimonials', 'Our Work'],
+      items: ['About', 'Contact', 'How It Works?', 'Testimonials', 'Our Work']
     },
     {
       title: 'RESOURCES',
@@ -60,8 +60,8 @@ const CONSTANTS = {
         'Blog',
         'Download eBook',
         'Pricing',
-        'Help & FAQs',
-      ],
+        'Help & FAQs'
+      ]
     },
     {
       title: 'OUR SERVICES',
@@ -73,14 +73,14 @@ const CONSTANTS = {
         'Creative Owned Names For Sale',
         'Audience Testing',
         'Trademark Research & Filling',
-        'Managed Agency Service',
-      ],
+        'Managed Agency Service'
+      ]
     },
     {
       title: 'LEGAL',
-      items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'],
-    },
-  ],
+      items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy']
+    }
+  ]
 };
 
 export default CONSTANTS;

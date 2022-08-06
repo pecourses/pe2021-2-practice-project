@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styles from './ContestCreationPage.module.sass';
 import {
   saveContestToStore,
-  clearDataForContest,
+  clearDataForContest
 } from '../../actions/actionCreator';
 import NextButton from '../../components/NextButton/NextButton';
 import ContestForm from '../../components/ContestForm/ContestForm';
@@ -78,7 +78,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   saveContest: data => dispatch(saveContestToStore(data)),
-  clearDataForContest: () => dispatch(clearDataForContest()),
+  clearDataForContest: () => dispatch(clearDataForContest())
 });
 
 export default connect(

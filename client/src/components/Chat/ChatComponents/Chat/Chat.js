@@ -9,7 +9,7 @@ import {
   setPreviewChatMode,
   changeShowModeCatalog,
   clearChatError,
-  getPreviewChat,
+  getPreviewChat
 } from '../../../../actions/actionCreator';
 import { chatController } from '../../../../api/ws/socketController';
 import CONSTANTS from '../../../../constants';
@@ -36,7 +36,7 @@ class Chat extends React.Component {
       NORMAL_PREVIEW_CHAT_MODE,
       FAVORITE_PREVIEW_CHAT_MODE,
       BLOCKED_PREVIEW_CHAT_MODE,
-      CATALOG_PREVIEW_CHAT_MODE,
+      CATALOG_PREVIEW_CHAT_MODE
     } = CONSTANTS;
     return (
       <div>
@@ -51,7 +51,7 @@ class Chat extends React.Component {
             <span
               onClick={() => setChatPreviewMode(NORMAL_PREVIEW_CHAT_MODE)}
               className={classNames(styles.button, {
-                [styles.activeButton]: chatMode === NORMAL_PREVIEW_CHAT_MODE,
+                [styles.activeButton]: chatMode === NORMAL_PREVIEW_CHAT_MODE
               })}
             >
               Normal
@@ -59,7 +59,7 @@ class Chat extends React.Component {
             <span
               onClick={() => setChatPreviewMode(FAVORITE_PREVIEW_CHAT_MODE)}
               className={classNames(styles.button, {
-                [styles.activeButton]: chatMode === FAVORITE_PREVIEW_CHAT_MODE,
+                [styles.activeButton]: chatMode === FAVORITE_PREVIEW_CHAT_MODE
               })}
             >
               Favorite
@@ -67,7 +67,7 @@ class Chat extends React.Component {
             <span
               onClick={() => setChatPreviewMode(BLOCKED_PREVIEW_CHAT_MODE)}
               className={classNames(styles.button, {
-                [styles.activeButton]: chatMode === BLOCKED_PREVIEW_CHAT_MODE,
+                [styles.activeButton]: chatMode === BLOCKED_PREVIEW_CHAT_MODE
               })}
             >
               Blocked
@@ -75,7 +75,7 @@ class Chat extends React.Component {
             <span
               onClick={() => setChatPreviewMode(CATALOG_PREVIEW_CHAT_MODE)}
               className={classNames(styles.button, {
-                [styles.activeButton]: chatMode === CATALOG_PREVIEW_CHAT_MODE,
+                [styles.activeButton]: chatMode === CATALOG_PREVIEW_CHAT_MODE
               })}
             >
               Catalog
@@ -96,14 +96,14 @@ class Chat extends React.Component {
       isExpanded,
       isShow,
       isShowCatalogCreation,
-      error,
+      error
     } = this.props.chatStore;
     const { id } = this.props.userStore.data;
     const { changeShow, getPreviewChat } = this.props;
     return (
       <div
         className={classNames(styles.chatContainer, {
-          [styles.showChat]: isShow,
+          [styles.showChat]: isShow
         })}
       >
         {error && <ChatError getData={getPreviewChat} />}
@@ -127,7 +127,7 @@ const mapDispatchToProps = dispatch => ({
   setChatPreviewMode: mode => dispatch(setPreviewChatMode(mode)),
   changeShowModeCatalog: () => dispatch(changeShowModeCatalog()),
   clearChatError: () => dispatch(clearChatError()),
-  getPreviewChat: () => dispatch(getPreviewChat()),
+  getPreviewChat: () => dispatch(getPreviewChat())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chat);

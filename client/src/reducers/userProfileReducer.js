@@ -3,7 +3,7 @@ import CONSTANTS from '../constants';
 
 const initialState = {
   profileModeView: CONSTANTS.USER_INFO_MODE,
-  isEdit: false,
+  isEdit: false
 };
 
 export default function (state = initialState, action) {
@@ -11,13 +11,13 @@ export default function (state = initialState, action) {
     case ACTION.CHANGE_PROFILE_MODE_VIEW: {
       return {
         ...state,
-        profileModeView: action.data,
+        profileModeView: action.data
       };
     }
     case ACTION.CHANGE_EDIT_MODE_ON_USER_PROFILE: {
       return {
         ...state,
-        isEdit: action.data,
+        isEdit: action.data
       };
     }
     default:

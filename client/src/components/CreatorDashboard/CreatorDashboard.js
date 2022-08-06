@@ -8,7 +8,7 @@ import {
   getContestsForCreative,
   clearContestList,
   setNewCreatorFilter,
-  getDataForContest,
+  getDataForContest
 } from '../../actions/actionCreator';
 import ContestsContainer from '../ContestsContainer/ContestsContainer';
 import ContestBox from '../ContestBox/ContestBox';
@@ -23,7 +23,7 @@ const types = [
   'logo',
   'name,tagline',
   'logo,tagline',
-  'name,logo',
+  'name,logo'
 ];
 
 class CreatorDashboard extends React.Component {
@@ -44,7 +44,7 @@ class CreatorDashboard extends React.Component {
         onChange={({ target }) =>
           this.changePredicate({
             name: 'typeIndex',
-            value: types.indexOf(target.value),
+            value: types.indexOf(target.value)
           })
         }
         value={types[creatorFilter.typeIndex]}
@@ -76,7 +76,7 @@ class CreatorDashboard extends React.Component {
         onChange={({ target }) =>
           this.changePredicate({
             name: 'industry',
-            value: target.value,
+            value: target.value
           })
         }
         value={creatorFilter.industry}
@@ -98,26 +98,25 @@ class CreatorDashboard extends React.Component {
     if (
       this.parseUrlForParams(this.props.location.search) &&
       !this.props.contests.length
-    )
-      this.getContests(this.props.creatorFilter);
+    ) { this.getContests(this.props.creatorFilter); }
   }
 
   getContests = filter => {
     this.props.getContests({
       limit: 8,
       offset: 0,
-      ...filter,
+      ...filter
     });
   };
 
   changePredicate = ({ name, value }) => {
     const { creatorFilter } = this.props;
     this.props.newFilter({
-      [name]: value === 'Choose industry' ? null : value,
+      [name]: value === 'Choose industry' ? null : value
     });
     this.parseParamsToUrl({
       ...creatorFilter,
-      ...{ [name]: value === 'Choose industry' ? null : value },
+      ...{ [name]: value === 'Choose industry' ? null : value }
     });
   };
 
@@ -137,7 +136,7 @@ class CreatorDashboard extends React.Component {
       industry: obj.industry ? obj.industry : '',
       awardSort: obj.awardSort || 'asc',
       ownEntries:
-        typeof obj.ownEntries === 'undefined' ? false : obj.ownEntries,
+        typeof obj.ownEntries === 'undefined' ? false : obj.ownEntries
     };
     if (!isEqual(filter, this.props.creatorFilter)) {
       this.props.newFilter(filter);
@@ -164,7 +163,7 @@ class CreatorDashboard extends React.Component {
     this.props.getContests({
       limit: 8,
       offset: startFrom,
-      ...this.getPredicateOfRequest(),
+      ...this.getPredicateOfRequest()
     });
   };
 
@@ -192,7 +191,7 @@ class CreatorDashboard extends React.Component {
     this.props.getContests({
       limit: 8,
       offset: 0,
-      ...this.getPredicateOfRequest(),
+      ...this.getPredicateOfRequest()
     });
   };
 
@@ -208,11 +207,11 @@ class CreatorDashboard extends React.Component {
               onClick={() =>
                 this.changePredicate({
                   name: 'ownEntries',
-                  value: !creatorFilter.ownEntries,
+                  value: !creatorFilter.ownEntries
                 })
               }
               className={classNames(styles.myEntries, {
-                [styles.activeMyEntries]: creatorFilter.ownEntries,
+                [styles.activeMyEntries]: creatorFilter.ownEntries
               })}
             >
               My Entries
@@ -228,7 +227,7 @@ class CreatorDashboard extends React.Component {
                 onChange={({ target }) =>
                   this.changePredicate({
                     name: 'contestId',
-                    value: target.value,
+                    value: target.value
                   })
                 }
                 name='contestId'
@@ -248,7 +247,7 @@ class CreatorDashboard extends React.Component {
                 onChange={({ target }) =>
                   this.changePredicate({
                     name: 'awardSort',
-                    value: target.value,
+                    value: target.value
                   })
                 }
                 value={creatorFilter.awardSort}
@@ -288,7 +287,7 @@ const mapDispatchToProps = dispatch => ({
   getContests: data => dispatch(getContestsForCreative(data)),
   clearContestsList: () => dispatch(clearContestList()),
   newFilter: filter => dispatch(setNewCreatorFilter(filter)),
-  getDataForContest: () => dispatch(getDataForContest()),
+  getDataForContest: () => dispatch(getDataForContest())
 });
 
 export default withRouter(

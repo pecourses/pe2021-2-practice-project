@@ -40,7 +40,7 @@ export function * dataForContestSaga (action) {
   } catch (e) {
     yield put({
       type: ACTION.GET_DATA_FOR_CONTEST_ACTION_ERROR,
-      error: e.response,
+      error: e.response
     });
   }
 }
@@ -53,7 +53,7 @@ export function * getContestByIdSaga (action) {
     delete data.Offers;
     yield put({
       type: ACTION.GET_CONTEST_BY_ID_SUCCESS,
-      data: { contestData: data, offers: Offers },
+      data: { contestData: data, offers: Offers }
     });
   } catch (e) {
     yield put({ type: ACTION.GET_CONTEST_BY_ID_ERROR, error: e.response });

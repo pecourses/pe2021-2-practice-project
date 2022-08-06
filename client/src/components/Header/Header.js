@@ -7,7 +7,7 @@ import Logo from '../Logo';
 import {
   getUserAction,
   clearUserStore,
-  headerRequest,
+  headerRequest
 } from '../../actions/actionCreator';
 import constants from '../../constants';
 
@@ -285,7 +285,7 @@ class Header extends React.Component {
 const mapStateToProps = state => state.userStore;
 const mapDispatchToProps = dispatch => ({
   getUser: () => dispatch(headerRequest()),
-  clearUserStore: () => dispatch(clearUserStore()),
+  clearUserStore: () => dispatch(clearUserStore())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

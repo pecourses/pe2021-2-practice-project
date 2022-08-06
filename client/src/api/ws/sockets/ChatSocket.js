@@ -3,7 +3,7 @@ import WebSocket from './WebSocket';
 import CONTANTS from '../../../constants';
 import {
   addMessage,
-  changeBlockStatusInStore,
+  changeBlockStatusInStore
 } from '../../../actions/actionCreator';
 
 class ChatSocket extends WebSocket {
@@ -21,8 +21,7 @@ class ChatSocket extends WebSocket {
       const { message } = data;
       const { messagesPreview } = this.getState().chatStore;
       messagesPreview.forEach(preview => {
-        if (isEqual(preview.participants, message.participants))
-          preview.blackList = message.blackList;
+        if (isEqual(preview.participants, message.participants)) { preview.blackList = message.blackList; }
       });
       this.dispatch(
         changeBlockStatusInStore({ chatData: message, messagesPreview })

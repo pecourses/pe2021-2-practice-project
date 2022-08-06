@@ -8,7 +8,7 @@ const withAuth = (Component, props) => {
   const mapStateToProps = state => state.userStore;
 
   const mapDispatchToProps = dispatch => ({
-    getUser: data => dispatch(getUserAction(data)),
+    getUser: data => dispatch(getUserAction(data))
   });
 
   class Hoc extends React.Component {

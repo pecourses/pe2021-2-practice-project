@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+// eslint-disable react/prop-types 
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
