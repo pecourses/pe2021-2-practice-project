@@ -50,7 +50,7 @@ router.get(
   basicMiddlewares.canGetContest,
   contestController.getContestById,
 );
-
+// get /contests
 router.post(
   '/getAllContests',
   checkToken.checkToken,
