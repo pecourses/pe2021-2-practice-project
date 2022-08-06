@@ -5,9 +5,7 @@ const ServerError = require('../errors/ServerError');
 const env = process.env.NODE_ENV || 'development';
 const devFilePath = path.resolve(__dirname, '..', '..', '..', 'public/images');
 
-const filePath = env === 'production'
-  ? '/var/www/html/images/'
-  : devFilePath;
+const filePath = env === 'production' ? '/var/www/html/images/' : devFilePath;
 
 if (!fs.existsSync(filePath)) {
   fs.mkdirSync(filePath, {
@@ -26,11 +24,15 @@ const storageContestFiles = multer.diskStorage({
 
 const uploadAvatars = multer({ storage: storageContestFiles }).single('file');
 const uploadContestFiles = multer({ storage: storageContestFiles }).array(
-  'files', 3);
+  'files',
+  3,
+);
 const updateContestFile = multer({ storage: storageContestFiles }).single(
-  'file');
+  'file',
+);
 const uploadLogoFiles = multer({ storage: storageContestFiles }).single(
-  'offerData');
+  'offerData',
+);
 
 module.exports.uploadAvatar = (req, res, next) => {
   uploadAvatars(req, res, (err) => {
@@ -75,4 +77,3 @@ module.exports.uploadLogoFiles = (req, res, next) => {
     return next();
   });
 };
-

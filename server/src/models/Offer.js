@@ -1,5 +1,4 @@
 
-
 module.exports = (sequelize, DataTypes) => {
   const Offer = sequelize.define('Offers', {
     id: {

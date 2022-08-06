@@ -18,4 +18,3 @@ module.exports.createRating = async (data, transaction) => {
     return result.get({ plain: true });
   }
 };
-

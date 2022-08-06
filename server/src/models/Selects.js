@@ -1,5 +1,4 @@
 
-
 module.exports = (sequelize, DataTypes) => {
   const SelectBox = sequelize.define('Selects', {
     type: {

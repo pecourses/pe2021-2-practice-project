@@ -30,7 +30,7 @@ module.exports.addMessage = async (req, res, next) => {
     await message.save();
     message._doc.participants = participants;
     const interlocutorId = participants.filter(
-      (participant) => participant !== req.tokenData.userId)[ 0 ];
+      (participant) => participant !== req.tokenData.userId)[0];
     const preview = {
       _id: newConversation._id,
       sender: req.tokenData.userId,
@@ -87,12 +87,12 @@ module.exports.getChat = async (req, res, next) => {
       { $sort: { createdAt: 1 } },
       {
         $project: {
-          '_id': 1,
-          'sender': 1,
-          'body': 1,
-          'conversation': 1,
-          'createdAt': 1,
-          'updatedAt': 1,
+          _id: 1,
+          sender: 1,
+          body: 1,
+          conversation: 1,
+          createdAt: 1,
+          updatedAt: 1,
         },
       },
     ]);
@@ -186,10 +186,10 @@ module.exports.blackList = async (req, res, next) => {
   try {
     const chat = await Conversation.findOneAndUpdate(
       { participants: req.body.participants },
-      { $set: { [ predicate ]: req.body.blackListFlag } }, { new: true });
+      { $set: { [predicate]: req.body.blackListFlag } }, { new: true });
     res.send(chat);
     const interlocutorId = req.body.participants.filter(
-      (participant) => participant !== req.tokenData.userId)[ 0 ];
+      (participant) => participant !== req.tokenData.userId)[0];
     controller.getChatController().emitChangeBlockStatus(interlocutorId, chat);
   } catch (err) {
     res.send(err);
@@ -202,7 +202,7 @@ module.exports.favoriteChat = async (req, res, next) => {
   try {
     const chat = await Conversation.findOneAndUpdate(
       { participants: req.body.participants },
-      { $set: { [ predicate ]: req.body.favoriteFlag } }, { new: true });
+      { $set: { [predicate]: req.body.favoriteFlag } }, { new: true });
     res.send(chat);
   } catch (err) {
     res.send(err);

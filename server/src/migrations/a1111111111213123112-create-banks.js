@@ -27,10 +27,10 @@ module.exports = {
     })
       .then(() => queryInterface.addConstraint('Banks', {
         type: 'check',
-        fields:  ['balance'],
+        fields: ['balance'],
         where: {
           balance: {
-            [ Sequelize.Op.gte ]: 0,
+            [Sequelize.Op.gte]: 0,
           },
         },
       }));
