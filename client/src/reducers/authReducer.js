@@ -2,7 +2,7 @@ import ACTION from '../actions/actionTypes';
 
 const initialState = {
   isFetching: false,
-  error: null
+  error: null,
 };
 
 export default function (state = initialState, action) {
@@ -10,25 +10,25 @@ export default function (state = initialState, action) {
     case ACTION.AUTH_ACTION_REQUEST: {
       return {
         isFetching: true,
-        error: null
+        error: null,
       };
     }
     case ACTION.AUTH_ACTION_SUCCESS: {
       return {
         isFetching: false,
-        error: null
+        error: null,
       };
     }
     case ACTION.AUTH_ACTION_ERROR: {
       return {
         isFetching: false,
-        error: action.error
+        error: action.error,
       };
     }
     case ACTION.AUTH_ACTION_CLEAR_ERROR: {
       return {
         ...state,
-        error: null
+        error: null,
       };
     }
     case ACTION.AUTH_ACTION_CLEAR: {

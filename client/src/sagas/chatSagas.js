@@ -47,9 +47,9 @@ export function * sendMessage (action) {
           _id: data.preview._id,
           participants: data.preview.participants,
           favoriteList: data.preview.favoriteList,
-          blackList: data.preview.blackList
-        }
-      }
+          blackList: data.preview.blackList,
+        },
+      },
     });
   } catch (err) {
     yield put({ type: ACTION.SEND_MESSAGE_ERROR, error: err.response });
@@ -65,7 +65,7 @@ export function * changeChatFavorite (action) {
     });
     yield put({
       type: ACTION.CHANGE_CHAT_FAVORITE,
-      data: { changedPreview: data, messagesPreview }
+      data: { changedPreview: data, messagesPreview },
     });
   } catch (err) {
     yield put({ type: ACTION.SET_CHAT_FAVORITE_ERROR, error: err.response });
@@ -81,7 +81,7 @@ export function * changeChatBlock (action) {
     });
     yield put({
       type: ACTION.CHANGE_CHAT_BLOCK,
-      data: { messagesPreview, chatData: data }
+      data: { messagesPreview, chatData: data },
     });
   } catch (err) {
     yield put({ type: ACTION.SET_CHAT_BLOCK_ERROR, error: err.response });
@@ -148,12 +148,12 @@ export function * removeChatFromCatalogSaga (action) {
     }
     yield put({
       type: ACTION.REMOVE_CHAT_FROM_CATALOG_SUCCESS,
-      data: { catalogList, currentCatalog: data }
+      data: { catalogList, currentCatalog: data },
     });
   } catch (err) {
     yield put({
       type: ACTION.REMOVE_CHAT_FROM_CATALOG_ERROR,
-      error: err.response
+      error: err.response,
     });
   }
 }
@@ -170,7 +170,7 @@ export function * changeCatalogName (action) {
     }
     yield put({
       type: ACTION.CHANGE_CATALOG_NAME_SUCCESS,
-      data: { catalogList, currentCatalog: data }
+      data: { catalogList, currentCatalog: data },
     });
   } catch (err) {
     yield put({ type: ACTION.CHANGE_CATALOG_NAME_ERROR, error: err.response });

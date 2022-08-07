@@ -1,0 +1,25 @@
+{
+  "extends": ["react-app", "semistandard"],
+  "rules": {
+    "no-console": "warn",
+    // "prefer-const": "warn",
+    // "eqeqeq": "warn",
+    "comma-dangle": [
+      "warn",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    // for "semistandard"
+    "no-unused-vars": "warn",
+    "no-useless-constructor": "warn",
+    "camelcase": "off",
+    "import/no-duplicates": "warn",
+    "no-unmodified-loop-condition": "warn",
+    "no-trailing-spaces": "warn"
+  }
+}

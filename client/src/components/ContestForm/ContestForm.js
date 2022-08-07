@@ -17,16 +17,16 @@ import OptionalSelects from '../OptionalSelects/OptionalSelects';
 const variableOptions = {
   [CONSTANTS.NAME_CONTEST]: {
     styleName: '',
-    typeOfName: ''
+    typeOfName: '',
   },
   [CONSTANTS.LOGO_CONTEST]: {
     nameVenture: '',
-    brandStyle: ''
+    brandStyle: '',
   },
   [CONSTANTS.TAGLINE_CONTEST]: {
     nameVenture: '',
-    typeOfTagline: ''
-  }
+    typeOfTagline: '',
+  },
 };
 
 class ContestForm extends React.Component {
@@ -36,7 +36,7 @@ class ContestForm extends React.Component {
       case CONSTANTS.NAME_CONTEST: {
         this.props.getData({
           characteristic1: 'nameStyle',
-          characteristic2: 'typeOfName'
+          characteristic2: 'typeOfName',
         });
         break;
       }
@@ -74,7 +74,7 @@ class ContestForm extends React.Component {
               targetCustomer: '',
               file: '',
               ...variableOptions[this.props.contestType],
-              ...this.props.initialValues
+              ...this.props.initialValues,
             }}
             onSubmit={this.props.handleSubmit}
             validationSchema={Schems.ContestSchem}
@@ -91,7 +91,7 @@ class ContestForm extends React.Component {
                   classes={{
                     container: styles.componentInputContainer,
                     input: styles.input,
-                    warning: styles.warning
+                    warning: styles.warning,
                   }}
                 />
               </div>
@@ -102,7 +102,7 @@ class ContestForm extends React.Component {
                     inputContainer: styles.selectInputContainer,
                     inputHeader: styles.selectHeader,
                     selectInput: styles.select,
-                    warning: styles.warning
+                    warning: styles.warning,
                   }}
                   header='Describe industry associated with your venture'
                   optionsArray={this.props.dataForContest.data.industry}
@@ -119,7 +119,7 @@ class ContestForm extends React.Component {
                   classes={{
                     container: styles.componentInputContainer,
                     inputStyle: styles.textArea,
-                    warning: styles.warning
+                    warning: styles.warning,
                   }}
                 />
               </div>
@@ -134,7 +134,7 @@ class ContestForm extends React.Component {
                   classes={{
                     container: styles.componentInputContainer,
                     inputStyle: styles.textArea,
-                    warning: styles.warning
+                    warning: styles.warning,
                   }}
                 />
               </div>
@@ -146,7 +146,7 @@ class ContestForm extends React.Component {
                   labelClass: styles.label,
                   fileNameClass: styles.fileName,
                   fileInput: styles.fileInput,
-                  warning: styles.warning
+                  warning: styles.warning,
                 }}
                 type='file'
               />
@@ -169,11 +169,11 @@ const mapStateToProps = (state, ownProps) => {
     isEditContest,
     contestStore: state.contestStore,
     dataForContest: state.dataForContest,
-    initialValues: ownProps.defaultData
+    initialValues: ownProps.defaultData,
   };
 };
 const mapDispatchToProps = dispatch => ({
-  getData: data => dispatch(getDataForContest(data))
+  getData: data => dispatch(getDataForContest(data)),
 });
 
 export default withRouter(

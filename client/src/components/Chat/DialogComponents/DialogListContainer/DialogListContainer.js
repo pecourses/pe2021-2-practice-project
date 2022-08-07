@@ -17,7 +17,7 @@ class DialogListContainer extends React.Component {
 const mapStateToProps = state => state.chatStore;
 
 const mapDispatchToProps = dispatch => ({
-  getChatPreview: () => dispatch(getPreviewChat())
+  getChatPreview: () => dispatch(getPreviewChat()),
 });
 
 export default connect(

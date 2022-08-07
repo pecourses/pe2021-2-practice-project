@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
       input: styles.input,
       warning: styles.fieldWarning,
       notValid: styles.notValid,
-      valid: styles.valid
+      valid: styles.valid,
     };
 
     return (
@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
         <Formik
           initialValues={{
             email: '',
-            password: ''
+            password: '',
           }}
           onSubmit={this.clicked}
           validationSchema={Schems.LoginSchem}
@@ -82,7 +82,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   loginRequest: ({ data, history }) => dispatch(authActionLogin(data, history)),
-  authClear: () => dispatch(clearAuth())
+  authClear: () => dispatch(clearAuth()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

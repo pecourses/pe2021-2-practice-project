@@ -20,7 +20,7 @@ const ContestInfo = props => {
     originalFileName,
     fileName,
     User,
-    status
+    status,
   } = contestData;
   return (
     <div className={styles.mainContestInfoContainer}>

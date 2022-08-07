@@ -12,7 +12,7 @@ const ChatInput = props => {
     props.sendMessage({
       messageBody: values.message,
       recipient: props.interlocutor.id,
-      interlocutor: props.interlocutor
+      interlocutor: props.interlocutor,
     });
     resetForm();
   };
@@ -32,7 +32,7 @@ const ChatInput = props => {
             classes={{
               container: styles.container,
               input: styles.input,
-              notValid: styles.notValid
+              notValid: styles.notValid,
             }}
           />
           <button type='submit'>
@@ -54,7 +54,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  sendMessage: data => dispatch(sendMessageAction(data))
+  sendMessage: data => dispatch(sendMessageAction(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChatInput);

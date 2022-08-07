@@ -3,7 +3,7 @@ import WebSocket from './WebSocket';
 import CONTANTS from '../../../constants';
 import {
   addMessage,
-  changeBlockStatusInStore
+  changeBlockStatusInStore,
 } from '../../../actions/actionCreator';
 
 class ChatSocket extends WebSocket {

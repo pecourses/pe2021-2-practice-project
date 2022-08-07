@@ -20,7 +20,7 @@ const OptionalSelects = props => {
               inputContainer: styles.selectInputContainer,
               inputHeader: styles.selectHeader,
               selectInput: styles.select,
-              warning: styles.warning
+              warning: styles.warning,
             }}
             optionsArray={props.dataForContest.data.typeOfName}
           />
@@ -31,7 +31,7 @@ const OptionalSelects = props => {
               inputContainer: styles.selectInputContainer,
               inputHeader: styles.selectHeader,
               selectInput: styles.select,
-              warning: styles.warning
+              warning: styles.warning,
             }}
             optionsArray={props.dataForContest.data.nameStyle}
           />
@@ -52,7 +52,7 @@ const OptionalSelects = props => {
               classes={{
                 container: styles.componentInputContainer,
                 input: styles.input,
-                warning: styles.warning
+                warning: styles.warning,
               }}
             />
           </div>
@@ -62,7 +62,7 @@ const OptionalSelects = props => {
               inputContainer: styles.selectInputContainer,
               inputHeader: styles.selectHeader,
               selectInput: styles.select,
-              warning: styles.warning
+              warning: styles.warning,
             }}
             header='Brand Style'
             optionsArray={props.dataForContest.data.brandStyle}
@@ -84,7 +84,7 @@ const OptionalSelects = props => {
               classes={{
                 container: styles.componentInputContainer,
                 input: styles.input,
-                warning: styles.warning
+                warning: styles.warning,
               }}
             />
           </div>
@@ -94,7 +94,7 @@ const OptionalSelects = props => {
               inputContainer: styles.selectInputContainer,
               inputHeader: styles.selectHeader,
               selectInput: styles.select,
-              warning: styles.warning
+              warning: styles.warning,
             }}
             header='Type tagline'
             optionsArray={props.dataForContest.data.typeOfTagline}

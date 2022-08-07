@@ -13,13 +13,13 @@ Logo.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
   src: PropTypes.string,
-  alt: PropTypes.string
+  alt: PropTypes.string,
 };
 
 Logo.defaultProps = {
   to: '/',
   src: `${CONSTANTS.STATIC_IMAGES_PATH}blue-logo.png`,
-  alt: 'logo'
+  alt: 'logo',
 };
 
 export default Logo;

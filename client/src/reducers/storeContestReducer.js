@@ -1,7 +1,7 @@
 import ACTION from '../actions/actionTypes';
 
 const initialState = {
-  contests: {}
+  contests: {},
 };
 
 export default function (state = initialState, action) {
@@ -11,8 +11,8 @@ export default function (state = initialState, action) {
         ...state,
         contests: {
           ...state.contests,
-          ...{ [action.data.type]: action.data.info }
-        }
+          ...{ [action.data.type]: action.data.info },
+        },
       };
     }
     case ACTION.CLEAR_CONTEST_STORE: {

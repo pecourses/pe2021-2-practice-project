@@ -27,7 +27,7 @@ const CreateCatalog = props => {
             container: styles.inputContainer,
             input: styles.input,
             warning: styles.fieldWarning,
-            notValid: styles.notValid
+            notValid: styles.notValid,
           }}
         />
         <button type='submit'>Create Catalog</button>
@@ -37,7 +37,7 @@ const CreateCatalog = props => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createCatalog: data => dispatch(createCatalog(data))
+  createCatalog: data => dispatch(createCatalog(data)),
 });
 
 const mapStateToProps = state => state.chatStore;

@@ -10,7 +10,7 @@ import {
   clearChangeMarkError,
   goToExpandedDialog,
   changeShowImage,
-  changeModalShow
+  changeModalShow,
 } from '../../actions/actionCreator';
 import CONSTANTS from '../../constants';
 import styles from './OfferBox.module.sass';
@@ -30,7 +30,7 @@ const OfferBox = props => {
           participants: messagesPreview[i].participants,
           _id: messagesPreview[i]._id,
           blackList: messagesPreview[i].blackList,
-          favoriteList: messagesPreview[i].favoriteList
+          favoriteList: messagesPreview[i].favoriteList,
         };
       }
     }
@@ -45,12 +45,12 @@ const OfferBox = props => {
         {
           label: 'Yes',
           onClick: () =>
-            props.setOfferStatus(props.data.User.id, props.data.id, 'resolve')
+            props.setOfferStatus(props.data.User.id, props.data.id, 'resolve'),
         },
         {
-          label: 'No'
-        }
-      ]
+          label: 'No',
+        },
+      ],
     });
   };
 
@@ -62,12 +62,12 @@ const OfferBox = props => {
         {
           label: 'Yes',
           onClick: () =>
-            props.setOfferStatus(props.data.User.id, props.data.id, 'reject')
+            props.setOfferStatus(props.data.User.id, props.data.id, 'reject'),
         },
         {
-          label: 'No'
-        }
-      ]
+          label: 'No',
+        },
+      ],
     });
   };
 
@@ -77,7 +77,7 @@ const OfferBox = props => {
       mark: value,
       offerId: props.data.id,
       isFirst: !props.data.mark,
-      creatorId: props.data.User.id
+      creatorId: props.data.User.id,
     });
   };
 
@@ -103,7 +103,7 @@ const OfferBox = props => {
   const goChat = () => {
     props.goToExpandedDialog({
       interlocutor: props.data.User,
-      conversationData: findConversationInfo()
+      conversationData: findConversationInfo(),
     });
   };
 
@@ -161,7 +161,7 @@ const OfferBox = props => {
               onClick={() =>
                 props.changeShowImage({
                   imagePath: data.fileName,
-                  isShowOnFull: true
+                  isShowOnFull: true,
                 })
               }
               className={styles.responseLogo}
@@ -219,7 +219,7 @@ const mapDispatchToProps = dispatch => ({
   changeMark: data => dispatch(changeMark(data)),
   clearError: () => dispatch(clearChangeMarkError()),
   goToExpandedDialog: data => dispatch(goToExpandedDialog(data)),
-  changeShowImage: data => dispatch(changeShowImage(data))
+  changeShowImage: data => dispatch(changeShowImage(data)),
 });
 
 const mapStateToProps = state => {
@@ -231,7 +231,7 @@ const mapStateToProps = state => {
     id,
     role,
     messagesPreview,
-    isShowModal
+    isShowModal,
   };
 };
 

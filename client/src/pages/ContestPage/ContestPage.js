@@ -10,7 +10,7 @@ import {
   goToExpandedDialog,
   changeEditContest,
   changeContestViewMode,
-  changeShowImage
+  changeShowImage,
 } from '../../actions/actionCreator';
 import Header from '../../components/Header/Header';
 import ContestSideBar from '../../components/ContestSideBar/ContestSideBar';
@@ -82,7 +82,7 @@ class ContestPage extends React.Component {
       creatorId,
       orderId,
       priority,
-      contestId: id
+      contestId: id,
     };
     this.props.setOfferStatus(obj);
   };
@@ -100,7 +100,7 @@ class ContestPage extends React.Component {
           participants: messagesPreview[i].participants,
           _id: messagesPreview[i]._id,
           blackList: messagesPreview[i].blackList,
-          favoriteList: messagesPreview[i].favoriteList
+          favoriteList: messagesPreview[i].favoriteList,
         };
       }
     }
@@ -111,7 +111,7 @@ class ContestPage extends React.Component {
     const { User } = this.props.contestByIdStore.contestData;
     this.props.goToExpandedDialog({
       interlocutor: User,
-      conversationData: this.findConversationInfo(User.id)
+      conversationData: this.findConversationInfo(User.id),
     });
   };
 
@@ -122,7 +122,7 @@ class ContestPage extends React.Component {
       changeShowImage,
       changeContestViewMode,
       getData,
-      clearSetOfferStatusError
+      clearSetOfferStatusError,
     } = this.props;
     const {
       isShowOnFull,
@@ -132,7 +132,7 @@ class ContestPage extends React.Component {
       isBrief,
       contestData,
       offers,
-      setOfferStatusError
+      setOfferStatusError,
     } = contestByIdStore;
 
     return (
@@ -162,7 +162,7 @@ class ContestPage extends React.Component {
                 <span
                   onClick={() => changeContestViewMode(true)}
                   className={classNames(styles.btn, {
-                    [styles.activeBtn]: isBrief
+                    [styles.activeBtn]: isBrief,
                   })}
                 >
                   Brief
@@ -175,10 +175,10 @@ class ContestPage extends React.Component {
                   }
                   style={{
                     backgroundColor:
-                      role === CONSTANTS.CUSTOMER && !offers.length && 'grey'
+                      role === CONSTANTS.CUSTOMER && !offers.length && 'grey',
                   }}
                   className={classNames(styles.btn, {
-                    [styles.activeBtn]: !isBrief
+                    [styles.activeBtn]: !isBrief,
                   })}
                 >
                   Offer
@@ -234,7 +234,7 @@ const mapDispatchToProps = dispatch => ({
   goToExpandedDialog: data => dispatch(goToExpandedDialog(data)),
   changeEditContest: data => dispatch(changeEditContest(data)),
   changeContestViewMode: data => dispatch(changeContestViewMode(data)),
-  changeShowImage: data => dispatch(changeShowImage(data))
+  changeShowImage: data => dispatch(changeShowImage(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContestPage);

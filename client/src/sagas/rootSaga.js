@@ -5,7 +5,7 @@ import {
   privateSaga,
   updateUserData,
   notAuthorizeSaga,
-  headerRequest
+  headerRequest,
 } from './userSaga';
 import { paymentSaga, cashoutSaga } from './paymentSaga';
 import {
@@ -14,7 +14,7 @@ import {
   updateContestSaga,
   dataForContestSaga,
   getContestByIdSaga,
-  downloadContestFileSaga
+  downloadContestFileSaga,
 } from './contestsSagas';
 import { changeMarkSaga, setOfferStatusSaga, addOfferSaga } from './offerSagas';
 import {
@@ -28,7 +28,7 @@ import {
   createCatalog,
   deleteCatalog,
   removeChatFromCatalogSaga,
-  changeCatalogName
+  changeCatalogName,
 } from './chatSagas';
 
 function * rootSaga () {

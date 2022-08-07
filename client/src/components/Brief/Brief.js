@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   updateContest,
   changeEditContest,
-  clearUpdateContestStore
+  clearUpdateContestStore,
 } from '../../actions/actionCreator';
 import ContestForm from '../ContestForm/ContestForm';
 import styles from './Brief.module.sass';
@@ -36,7 +36,7 @@ const Brief = props => {
       typeOfName,
       typeOfTagline,
       originalFileName,
-      contestType
+      contestType,
     } = props.contestData;
     const data = {
       focusOfWork,
@@ -49,7 +49,7 @@ const Brief = props => {
       typeOfName,
       typeOfTagline,
       originalFileName,
-      contestType
+      contestType,
     };
     const defaultData = {};
     Object.keys(data).forEach(key => {
@@ -70,7 +70,7 @@ const Brief = props => {
     changeEditContest,
     role,
     goChat,
-    clearUpdateContestStore
+    clearUpdateContestStore,
   } = props;
   const { error } = props.updateContestStore;
   const { id } = props.userStore.data;
@@ -112,7 +112,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   update: data => dispatch(updateContest(data)),
   changeEditContest: data => dispatch(changeEditContest(data)),
-  clearUpdateContestStore: () => dispatch(clearUpdateContestStore())
+  clearUpdateContestStore: () => dispatch(clearUpdateContestStore()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Brief));

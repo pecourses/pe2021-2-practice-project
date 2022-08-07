@@ -12,7 +12,7 @@ const SliderBar = props => {
     prevNextButtons: true,
     autoPlay: true,
     groupCells: true,
-    lazyLoad: true
+    lazyLoad: true,
   };
 
   const getStyleName = () => {

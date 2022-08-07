@@ -15,7 +15,7 @@ const PayInput = props => {
           {...field}
           placeholder={label}
           className={classNames(classes.input, {
-            [classes.notValid]: touched && error
+            [classes.notValid]: touched && error,
           })}
         />
         {touched && error && (
@@ -33,7 +33,7 @@ const PayInput = props => {
           {...field}
           placeholder={label}
           className={classNames(classes.input, {
-            [classes.notValid]: touched && error
+            [classes.notValid]: touched && error,
           })}
           onFocus={() => changeFocus(field.name)}
         />
@@ -49,7 +49,7 @@ const PayInput = props => {
         {...field}
         placeholder={label}
         className={classNames(classes.input, {
-          [classes.notValid]: touched && error
+          [classes.notValid]: touched && error,
         })}
         onFocus={() => changeFocus(field.name)}
       />

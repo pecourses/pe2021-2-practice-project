@@ -26,7 +26,7 @@ const LoginPage = props => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  clearError: () => dispatch(clearErrorSignUpAndLogin())
+  clearError: () => dispatch(clearErrorSignUpAndLogin()),
 });
 
 export default connect(null, mapDispatchToProps)(LoginPage);

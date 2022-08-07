@@ -4,7 +4,7 @@ import Catalog from '../Catalog/Catalog';
 import styles from '../CatalogListContainer/CatalogListContainer.module.sass';
 import {
   changeShowModeCatalog,
-  deleteCatalog
+  deleteCatalog,
 } from '../../../../actions/actionCreator';
 
 const CatalogList = props => {
@@ -43,7 +43,7 @@ const CatalogList = props => {
 
 const mapDispatchToProps = dispatch => ({
   changeShowModeCatalog: data => dispatch(changeShowModeCatalog(data)),
-  deleteCatalog: data => dispatch(deleteCatalog(data))
+  deleteCatalog: data => dispatch(deleteCatalog(data)),
 });
 
 export default connect(null, mapDispatchToProps)(CatalogList);

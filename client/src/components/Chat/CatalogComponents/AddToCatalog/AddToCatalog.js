@@ -41,7 +41,7 @@ const AddToCatalog = props => {
               classes={{
                 inputContainer: styles.selectInputContainer,
                 inputHeader: styles.selectHeader,
-                selectInput: styles.select
+                selectInput: styles.select,
               }}
               optionsArray={selectArray}
               valueArray={getValueArray()}
@@ -61,7 +61,7 @@ const AddToCatalog = props => {
 const mapStateToProps = state => state.chatStore;
 
 const mapDispatchToProps = dispatch => ({
-  addChatToCatalog: data => dispatch(addChatToCatalog(data))
+  addChatToCatalog: data => dispatch(addChatToCatalog(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddToCatalog);

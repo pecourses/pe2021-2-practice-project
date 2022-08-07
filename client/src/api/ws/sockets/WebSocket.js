@@ -6,7 +6,7 @@ class WebSocket {
     this.dispatch = dispatch;
     this.getState = getState;
     this.socket = socketIoClient(`${CONSTANTS.BASE_URL}${room}`, {
-      origins: 'localhost:*'
+      origins: 'localhost:*',
     });
     this.listen();
   }

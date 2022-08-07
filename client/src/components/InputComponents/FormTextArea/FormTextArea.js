@@ -7,7 +7,7 @@ const FormTextArea = ({ label, classes, type, ...rest }) => (
     {props => {
       const {
         field,
-        meta: { touched, error }
+        meta: { touched, error },
       } = props;
       const { container, inputStyle, notValid, warning } = classes;
       return (
@@ -16,7 +16,7 @@ const FormTextArea = ({ label, classes, type, ...rest }) => (
             {...field}
             placeholder={label}
             className={classNames(inputStyle, {
-              [notValid]: touched && error
+              [notValid]: touched && error,
             })}
           />
           <ErrorMessage

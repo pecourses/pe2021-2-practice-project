@@ -121,7 +121,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  choseBundle: bundle => dispatch(selectBundle(bundle))
+  choseBundle: bundle => dispatch(selectBundle(bundle)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StartContestPage);

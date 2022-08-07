@@ -3,7 +3,7 @@ import ACTION from '../actions/actionTypes';
 const initialState = {
   isFetching: false,
   error: null,
-  focusOnElement: 'number'
+  focusOnElement: 'number',
 };
 
 export default function (state = initialState, action) {
@@ -11,21 +11,21 @@ export default function (state = initialState, action) {
     case ACTION.CHANGE_FOCUS_ON_CARD: {
       return {
         ...state,
-        focusOnElement: action.data
+        focusOnElement: action.data,
       };
     }
     case ACTION.PAYMENT_ACTION_REQUEST: {
       return {
         ...state,
         isFetching: true,
-        error: null
+        error: null,
       };
     }
     case ACTION.PAYMENT_ACTION_ERROR: {
       return {
         ...state,
         isFetching: false,
-        error: action.error
+        error: action.error,
       };
     }
     case ACTION.CLEAR_PAYMENT_STORE: {

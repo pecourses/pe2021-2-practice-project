@@ -7,12 +7,12 @@ const FormInput = ({ classes, label, name, ...rest }) => (
     {props => {
       const {
         field,
-        meta: { touched, error }
+        meta: { touched, error },
       } = props;
 
       const inputClassName = classNames(classes.input, {
         [classes.notValid]: touched && error,
-        [classes.valid]: touched && !error
+        [classes.valid]: touched && !error,
       });
       return (
         <div className={classes.container}>

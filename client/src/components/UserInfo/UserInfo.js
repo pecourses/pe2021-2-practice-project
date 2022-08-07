@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import UpdateUserInfoForm from '../UpdateUserInfoForm/UpdateUserInfoForm';
 import {
   updateUserData,
-  changeEditModeOnUserProfile
+  changeEditModeOnUserProfile,
 } from '../../actions/actionCreator';
 import CONSTANTS from '../../constants';
 import styles from './UserInfo.module.sass';
@@ -26,7 +26,7 @@ const UserInfo = props => {
     displayName,
     email,
     role,
-    balance
+    balance,
   } = data;
   return (
     <div className={styles.mainContainer}>
@@ -91,7 +91,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   updateUser: data => dispatch(updateUserData(data)),
-  changeEditMode: data => dispatch(changeEditModeOnUserProfile(data))
+  changeEditMode: data => dispatch(changeEditModeOnUserProfile(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);

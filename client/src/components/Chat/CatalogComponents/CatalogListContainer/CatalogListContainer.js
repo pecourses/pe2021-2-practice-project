@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {
   getCatalogList,
-  removeChatFromCatalog
+  removeChatFromCatalog,
 } from '../../../../actions/actionCreator';
 import CatalogList from '../CatalogList/CatalogList';
 import DialogList from '../../DialogComponents/DialogList/DialogList';
@@ -58,7 +58,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   getCatalogList: data => dispatch(getCatalogList(data)),
-  removeChatFromCatalog: data => dispatch(removeChatFromCatalog(data))
+  removeChatFromCatalog: data => dispatch(removeChatFromCatalog(data)),
 });
 
 export default connect(

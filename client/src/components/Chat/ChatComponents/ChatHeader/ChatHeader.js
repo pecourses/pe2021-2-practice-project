@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import {
   backToDialogList,
   changeChatFavorite,
-  changeChatBlock
+  changeChatBlock,
 } from '../../../../actions/actionCreator';
 import styles from './ChatHeader.module.sass';
 import CONSTANTS from '../../../../constants';
@@ -62,14 +62,14 @@ const ChatHeader = props => {
                 changeFavorite(
                   {
                     participants: chatData.participants,
-                    favoriteFlag: !isFavorite(chatData, userId)
+                    favoriteFlag: !isFavorite(chatData, userId),
                   },
                   event
                 )
               }
               className={classNames({
                 'far fa-heart': !isFavorite(chatData, userId),
-                'fas fa-heart': isFavorite(chatData, userId)
+                'fas fa-heart': isFavorite(chatData, userId),
               })}
             />
             <i
@@ -77,14 +77,14 @@ const ChatHeader = props => {
                 changeBlackList(
                   {
                     participants: chatData.participants,
-                    blackListFlag: !isBlocked(chatData, userId)
+                    blackListFlag: !isBlocked(chatData, userId),
                   },
                   event
                 )
               }
               className={classNames({
                 'fas fa-user-lock': !isBlocked(chatData, userId),
-                'fas fa-unlock': isBlocked(chatData, userId)
+                'fas fa-unlock': isBlocked(chatData, userId),
               })}
             />
           </div>
@@ -102,7 +102,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   backToDialogList: () => dispatch(backToDialogList()),
   changeChatFavorite: data => dispatch(changeChatFavorite(data)),
-  changeChatBlock: data => dispatch(changeChatBlock(data))
+  changeChatBlock: data => dispatch(changeChatBlock(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChatHeader);

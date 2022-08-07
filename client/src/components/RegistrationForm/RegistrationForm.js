@@ -23,9 +23,9 @@ class RegistrationForm extends React.Component {
         displayName: values.displayName,
         email: values.email,
         password: values.password,
-        role: values.role
+        role: values.role,
       },
-      history: this.props.history
+      history: this.props.history,
     });
   };
 
@@ -37,7 +37,7 @@ class RegistrationForm extends React.Component {
       input: styles.input,
       warning: styles.fieldWarning,
       notValid: styles.notValid,
-      valid: styles.valid
+      valid: styles.valid,
     };
     return (
       <div className={styles.signUpFormContainer}>
@@ -61,7 +61,7 @@ class RegistrationForm extends React.Component {
             password: '',
             confirmPassword: '',
             role: CONSTANTS.CUSTOMER,
-            agreeOfTerms: false
+            agreeOfTerms: false,
           }}
           onSubmit={this.clicked}
           validationSchema={Schems.RegistrationSchem}
@@ -134,7 +134,7 @@ class RegistrationForm extends React.Component {
                 name='agreeOfTerms'
                 classes={{
                   container: styles.termsOfService,
-                  warning: styles.fieldWarning
+                  warning: styles.fieldWarning,
                 }}
                 id='termsOfService'
                 type='checkbox'
@@ -157,13 +157,13 @@ class RegistrationForm extends React.Component {
 const mapStateToProps = state => ({
   auth: state.auth,
   initialValues: {
-    role: CONSTANTS.CUSTOMER
-  }
+    role: CONSTANTS.CUSTOMER,
+  },
 });
 
 const mapDispatchToProps = dispatch => ({
   register: ({ data, history }) => dispatch(authActionRegister(data, history)),
-  authClear: () => dispatch(clearAuth())
+  authClear: () => dispatch(clearAuth()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationForm);

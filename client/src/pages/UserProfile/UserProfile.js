@@ -9,7 +9,7 @@ import PayForm from '../../components/PayForm/PayForm';
 import {
   cashOut,
   changeProfileModeView,
-  clearPaymentStore
+  clearPaymentStore,
 } from '../../actions/actionCreator';
 import Error from '../../components/Error/Error';
 
@@ -20,7 +20,7 @@ const UserProfile = props => {
       number,
       expiry,
       cvc,
-      sum
+      sum,
     });
   };
 
@@ -30,7 +30,7 @@ const UserProfile = props => {
     profileModeView,
     changeProfileModeView,
     error,
-    clearPaymentStore
+    clearPaymentStore,
   } = props;
   return (
     <div>
@@ -42,7 +42,7 @@ const UserProfile = props => {
             <div
               className={classNames(styles.optionContainer, {
                 [styles.currentOption]:
-                  profileModeView === CONSTANTS.USER_INFO_MODE
+                  profileModeView === CONSTANTS.USER_INFO_MODE,
               })}
               onClick={() => changeProfileModeView(CONSTANTS.USER_INFO_MODE)}
             >
@@ -52,7 +52,7 @@ const UserProfile = props => {
               <div
                 className={classNames(styles.optionContainer, {
                   [styles.currentOption]:
-                    profileModeView === CONSTANTS.CASHOUT_MODE
+                    profileModeView === CONSTANTS.CASHOUT_MODE,
                 })}
                 onClick={() => changeProfileModeView(CONSTANTS.CASHOUT_MODE)}
               >
@@ -96,14 +96,14 @@ const mapStateToProps = state => {
     balance,
     role,
     profileModeView,
-    error
+    error,
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   cashOut: data => dispatch(cashOut(data)),
   changeProfileModeView: data => dispatch(changeProfileModeView(data)),
-  clearPaymentStore: () => dispatch(clearPaymentStore())
+  clearPaymentStore: () => dispatch(clearPaymentStore()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

@@ -3,7 +3,7 @@ import ACTION from '../actions/actionTypes';
 const initialState = {
   isFetching: true,
   error: null,
-  data: null
+  data: null,
 };
 
 export default function (state = initialState, action) {
@@ -13,7 +13,7 @@ export default function (state = initialState, action) {
         ...state,
         isFetching: true,
         error: null,
-        data: null
+        data: null,
       };
     }
     case ACTION.GET_USER_SUCCESS: {
@@ -21,7 +21,7 @@ export default function (state = initialState, action) {
         ...state,
         isFetching: false,
         error: null,
-        data: action.data
+        data: action.data,
       };
     }
     case ACTION.GET_USER_ERROR: {
@@ -29,33 +29,33 @@ export default function (state = initialState, action) {
         ...state,
         isFetching: false,
         error: action.error,
-        data: null
+        data: null,
       };
     }
     case ACTION.CLEAR_USER_STORE: {
       return {
         ...state,
         data: null,
-        error: null
+        error: null,
       };
     }
     case ACTION.UPDATE_USER_DATA_SUCCESS: {
       return {
         ...state,
         data: { ...state.data, ...action.data },
-        error: null
+        error: null,
       };
     }
     case ACTION.UPDATE_USER_DATA_ERROR: {
       return {
         ...state,
-        error: action.error
+        error: action.error,
       };
     }
     case ACTION.CLEAR_USER_ERROR: {
       return {
         ...state,
-        error: null
+        error: null,
       };
     }
     default:
