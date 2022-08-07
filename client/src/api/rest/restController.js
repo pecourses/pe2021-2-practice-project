@@ -1,4 +1,5 @@
 import http from '../interceptor';
+import queryString from 'query-string';
 
 export const registerRequest = (data) => http.post('registration', data);
 export const loginRequest = (data) => http.post('login', data);
@@ -27,10 +28,9 @@ export const removeChatFromCatalog = (data) =>
   http.post('removeChatFromCatalog', data);
 export const changeCatalogName = (data) => http.post('updateNameCatalog', data);
 
+// query-string не запаковывает undefined значения, т.е. пустой offset отсюда не уйдет
 export const getCustomersContests = (data) =>
-  http.get(
-    `/customers/id/contests?limit=${data.limit}&offset=${data.offset}&status=${data.contestStatus}`
-  );
+  http.get(`/customers/id/contests?${queryString.stringify(data)}`);
 
 export const getActiveContests = ({
   offset,
