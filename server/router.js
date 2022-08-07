@@ -9,8 +9,13 @@ const chatController = require('./controllers/chatController');
 const upload = require('./utils/fileUpload');
 const customersRouter = require('./routes/customerRouter');
 const contestsRouter = require('./routes/contestRouter');
+const offersRouter = require('./routes/offerRouter');
 
 const router = express.Router();
+
+// получить все офферы (+пагинация)
+// 1 реализовать прослушивание ендпойнта
+router.use('/offers', offersRouter);
 
 router.use('/customers', customersRouter);
 
