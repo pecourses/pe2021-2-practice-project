@@ -19,9 +19,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.ENUM('INCOME', 'EXPENSE'),
       },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValues: new Date(),
+      },
     },
     {
-      timestamps: true,
+      timestamps: false,
     }
   );
 
