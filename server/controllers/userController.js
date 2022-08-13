@@ -253,6 +253,16 @@ module.exports.cashout = async (req, res, next) => {
       },
       transaction
     );
+
+    const userTransaction = {
+      userId: req.tokenData.userId,
+      summ: req.body.sum,
+      operationType: 'INCOME',
+      createdAt: new Date(),
+    };
+
+    await bd.Transactions.create(userTransaction, { transaction });
+
     transaction.commit();
     res.send({ balance: updatedUser.balance });
   } catch (err) {
