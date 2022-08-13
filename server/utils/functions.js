@@ -2,7 +2,11 @@ const bd = require('../models');
 const CONSTANTS = require('../constants');
 
 module.exports.createWhereForAllContests = (
-  typeIndex, contestId, industry, awardSort) => {
+  typeIndex,
+  contestId,
+  industry,
+  awardSort
+) => {
   const object = {
     where: {},
     order: [],

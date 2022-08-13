@@ -6,7 +6,7 @@ module.exports.getOffers = async (req, res, next) => {
   try {
     const foundOffers = await db.Offers.findAll(
       { limit, offset },
-      { raw: true },
+      { raw: true }
     );
 
     res.status(200).send(foundOffers);

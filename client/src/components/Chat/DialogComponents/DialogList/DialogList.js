@@ -85,8 +85,12 @@ const DialogList = props => {
 
   const renderChatPreview = () => {
     const { chatMode } = props;
-    if (chatMode === CONSTANTS.FAVORITE_PREVIEW_CHAT_MODE) { return renderPreview(onlyFavoriteDialogs); }
-    if (chatMode === CONSTANTS.BLOCKED_PREVIEW_CHAT_MODE) { return renderPreview(onlyBlockDialogs); }
+    if (chatMode === CONSTANTS.FAVORITE_PREVIEW_CHAT_MODE) {
+      return renderPreview(onlyFavoriteDialogs);
+    }
+    if (chatMode === CONSTANTS.BLOCKED_PREVIEW_CHAT_MODE) {
+      return renderPreview(onlyBlockDialogs);
+    }
     return renderPreview();
   };
 

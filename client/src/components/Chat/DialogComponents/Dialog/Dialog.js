@@ -23,7 +23,9 @@ class Dialog extends React.Component {
   };
 
   componentWillReceiveProps (nextProps, nextContext) {
-    if (nextProps.interlocutor.id !== this.props.interlocutor.id) { this.props.getDialog({ interlocutorId: nextProps.interlocutor.id }); }
+    if (nextProps.interlocutor.id !== this.props.interlocutor.id) {
+      this.props.getDialog({ interlocutorId: nextProps.interlocutor.id });
+    }
   }
 
   componentWillUnmount () {

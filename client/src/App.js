@@ -23,11 +23,10 @@ import UserSummaryPage from './pages/UserSummaryPage';
 
 class App extends Component {
   render () {
-    const q = 10 === 12;
     return (
       <Router history={browserHistory}>
         <ToastContainer
-          position="top-center"
+          position='top-center'
           autoClose={5000}
           hideProgressBar
           newestOnTop={false}
@@ -38,23 +37,23 @@ class App extends Component {
           pauseOnHover
         />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/pricing" component={PricingPage} />
-          <Route exact path="/login" component={withNotAuth(LoginPage)} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/pricing' component={PricingPage} />
+          <Route exact path='/login' component={withNotAuth(LoginPage)} />
           <Route
             exact
-            path="/registration"
+            path='/registration'
             component={withNotAuth(RegistrationPage)}
           />
-          <Route exact path="/payment" component={withAuth(Payment)} />
+          <Route exact path='/payment' component={withAuth(Payment)} />
           <Route
             exact
-            path="/startContest"
+            path='/startContest'
             component={withAuth(StartContestPage)}
           />
           <Route
             exact
-            path="/startContest/nameContest"
+            path='/startContest/nameContest'
             component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.NAME_CONTEST,
               title: 'Company Name',
@@ -62,7 +61,7 @@ class App extends Component {
           />
           <Route
             exact
-            path="/startContest/taglineContest"
+            path='/startContest/taglineContest'
             component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.TAGLINE_CONTEST,
               title: 'TAGLINE',
@@ -70,16 +69,16 @@ class App extends Component {
           />
           <Route
             exact
-            path="/startContest/logoContest"
+            path='/startContest/logoContest'
             component={withAuth(ContestCreationPage, {
               contestType: CONSTANTS.LOGO_CONTEST,
               title: 'LOGO',
             })}
           />
-          <Route exact path="/dashboard" component={withAuth(Dashboard)} />
-          <Route exact path="/contest/:id" component={withAuth(ContestPage)} />
-          <Route exact path="/account" component={withAuth(UserProfile)} />
-          <Route exact path="/summary" component={withAuth(UserSummaryPage)} />
+          <Route exact path='/dashboard' component={withAuth(Dashboard)} />
+          <Route exact path='/contest/:id' component={withAuth(ContestPage)} />
+          <Route exact path='/account' component={withAuth(UserProfile)} />
+          <Route exact path='/summary' component={withAuth(UserSummaryPage)} />
           <Route component={NotFound} />
         </Switch>
         <ChatContainer />

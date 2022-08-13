@@ -7,7 +7,7 @@ const contestsRouter = Router();
 contestsRouter.get(
   '/:contestId',
   basicMiddlewares.canGetContest,
-  contestController.getContestById,
+  contestController.getContestById
 );
 
 module.exports = contestsRouter;

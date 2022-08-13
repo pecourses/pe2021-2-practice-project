@@ -1,4 +1,4 @@
-const { Router } = require("express");
+const { Router } = require('express');
 const validators = require('../middlewares/validators');
 const userController = require('../controllers/userController');
 const hashPass = require('../middlewares/hashPassMiddle');
@@ -9,7 +9,7 @@ authRouter.post(
   '/registration',
   validators.validateRegistrationData,
   hashPass,
-  userController.registration,
+  userController.registration
 );
 
 authRouter.post('/login', validators.validateLogin, userController.login);

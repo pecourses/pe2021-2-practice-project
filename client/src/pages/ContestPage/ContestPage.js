@@ -194,12 +194,12 @@ class ContestPage extends React.Component {
                 <div className={styles.offersContainer}>
                   {role === CONSTANTS.CREATOR &&
                     contestData.status === CONSTANTS.CONTEST_STATUS_ACTIVE && (
-                    <OfferForm
-                      contestType={contestData.contestType}
-                      contestId={contestData.id}
-                      customerId={contestData.User.id}
-                    />
-                  )}
+                      <OfferForm
+                        contestType={contestData.contestType}
+                        contestId={contestData.id}
+                        customerId={contestData.User.id}
+                      />
+                    )}
                   {setOfferStatusError && (
                     <Error
                       data={setOfferStatusError.data}
