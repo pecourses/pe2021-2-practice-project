@@ -1,3 +1,7 @@
+const {
+  OPERATION_TYPES: { INCOME, EXPENSE },
+} = require('./../constants');
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
@@ -22,7 +26,7 @@ module.exports = {
         },
         operationType: {
           allowNull: false,
-          type: Sequelize.ENUM('INCOME', 'EXPENSE'),
+          type: Sequelize.ENUM(INCOME, EXPENSE),
         },
         createdAt: {
           allowNull: false,

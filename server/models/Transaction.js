@@ -1,3 +1,7 @@
+const {
+  OPERATION_TYPES: { INCOME, EXPENSE },
+} = require('./../constants');
+
 module.exports = (sequelize, DataTypes) => {
   const Transaction = sequelize.define(
     'Transactions',
@@ -17,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       operationType: {
         allowNull: false,
-        type: DataTypes.ENUM('INCOME', 'EXPENSE'),
+        type: DataTypes.ENUM(INCOME, EXPENSE),
       },
       createdAt: {
         type: DataTypes.DATE,

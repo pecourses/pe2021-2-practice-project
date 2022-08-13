@@ -8,6 +8,9 @@ const controller = require('../socketInit');
 const userQueries = require('./queries/userQueries');
 const bankQueries = require('./queries/bankQueries');
 const ratingQueries = require('./queries/ratingQueries');
+const {
+  OPERATION_TYPES: { INCOME, EXPENSE },
+} = require('./../constants');
 
 module.exports.login = async (req, res, next) => {
   try {
@@ -176,7 +179,7 @@ module.exports.payment = async (req, res, next) => {
 
     const userTransaction = {
       userId,
-      operationType: 'EXPENSE',
+      operationType: EXPENSE,
       summ: price,
       createdAt: new Date(),
     };
@@ -257,7 +260,7 @@ module.exports.cashout = async (req, res, next) => {
     const userTransaction = {
       userId: req.tokenData.userId,
       summ: req.body.sum,
-      operationType: 'INCOME',
+      operationType: INCOME,
       createdAt: new Date(),
     };
 
