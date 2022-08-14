@@ -1,1 +1,5 @@
 GET http://localhost:5000/offers?limit=3&offset=0
+
+###
+
+GET http://localhost:3000/user/transactions

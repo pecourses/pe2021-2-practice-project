@@ -10,6 +10,7 @@ const customersRouter = require('./routes/customerRouter');
 const contestsRouter = require('./routes/contestRouter');
 const offersRouter = require('./routes/offerRouter');
 const authRouter = require('./routes/authRouter');
+const userRouter = require('./routes/userRouter');
 
 const router = express.Router();
 
@@ -22,6 +23,8 @@ router.use(checkToken.checkToken);
 router.use('/customers', customersRouter);
 
 router.use('/contests', contestsRouter);
+
+router.use('/user', userRouter);
 
 router.post('/dataForContest', contestController.dataForContest);
 
