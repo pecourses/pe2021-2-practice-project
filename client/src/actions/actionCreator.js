@@ -293,3 +293,22 @@ export const changeModalShow = data => ({
   type: ACTION.CHANGE_SHOW_MODAL,
   data,
 });
+
+// getTransactions
+export const getTransactionsAction = () => ({
+  type: ACTION.GET_TRANSACTIONS_ACTION,
+});
+
+export const getTransactionsRequest = () => ({
+  type: ACTION.GET_TRANSACTIONS_REQUEST,
+});
+
+export const getTransactionsSuccess = data => ({
+  type: ACTION.GET_TRANSACTIONS_SUCCESS,
+  data,
+});
+
+export const getTransactionsError = err => ({
+  type: ACTION.GET_TRANSACTIONS_ERROR,
+  err,
+});
