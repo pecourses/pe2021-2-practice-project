@@ -7,7 +7,13 @@ import Footer from '../../components/Footer/Footer';
 import styles from './TransactionsPage.module.sass';
 
 function TransactionPage (props) {
-  const { transactions, isFetching, error, getTransactions } = props;
+  const {
+    getTransactions,
+    transactionsStore: { transactions, isFetching, error },
+    userStore: {
+      data: { firstName, lastName },
+    },
+  } = props;
 
   useEffect(() => {
     getTransactions();
@@ -16,7 +22,9 @@ function TransactionPage (props) {
   return (
     <div className={styles.transactionsPageContainer}>
       <Header />
-      {/* Вывести строку с именем пользователя */}
+      <div>
+        {firstName} {lastName}, here is your transactions list:
+      </div>
       {isFetching && <div>Loading. Please, wait...</div>}
       {error && <div>Error</div>}
       {!isFetching && !error && (
@@ -29,7 +37,10 @@ function TransactionPage (props) {
   );
 }
 
-const mapStateToProps = ({ transactionsStore }) => transactionsStore;
+const mapStateToProps = ({ transactionsStore, userStore }) => ({
+  transactionsStore,
+  userStore,
+});
 
 const mapDispatchToProps = dispatch => ({
   getTransactions: () => dispatch(getTransactionsAction()),
