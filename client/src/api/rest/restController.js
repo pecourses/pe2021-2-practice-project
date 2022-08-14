@@ -59,3 +59,5 @@ export const getActiveContests = ({
 export const updateContest = data => http.post('updateContest', data);
 // /contests/1
 // export const updateContest = (data) => http.patch(`contests/${}`, data);
+
+export const getTransactions = () => http.get('/users/id/transactions');

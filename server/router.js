@@ -24,7 +24,7 @@ router.use('/customers', customersRouter);
 
 router.use('/contests', contestsRouter);
 
-router.use('/user', userRouter);
+router.use('/users', userRouter);
 
 router.post('/dataForContest', contestController.dataForContest);
 

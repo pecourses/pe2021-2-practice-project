@@ -3,6 +3,6 @@ const userController = require('../controllers/userController');
 
 const userRouter = Router();
 
-userRouter.get('/transactions', userController.getTransactions);
+userRouter.get('/id/transactions', userController.getTransactions);
 
 module.exports = userRouter;
