@@ -20,6 +20,7 @@ import browserHistory from './browserHistory';
 import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
 import PricingPage from './pages/PracingPage/PricingPage';
 import UserSummaryPage from './pages/UserSummaryPage';
+import TransactionsPage from './pages/TransactionsPage/TransactionsPage';
 
 class App extends Component {
   render () {
@@ -78,6 +79,11 @@ class App extends Component {
           <Route exact path='/dashboard' component={withAuth(Dashboard)} />
           <Route exact path='/contest/:id' component={withAuth(ContestPage)} />
           <Route exact path='/account' component={withAuth(UserProfile)} />
+          <Route
+            exact
+            path='/transactions'
+            component={withAuth(TransactionsPage)}
+          />
           <Route exact path='/summary' component={withAuth(UserSummaryPage)} />
           <Route component={NotFound} />
         </Switch>
