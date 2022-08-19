@@ -37,8 +37,7 @@ export const getContestById = ({ contestId }) =>
 export const getActiveContests = data =>
   http.get(`/contests?${queryString.stringify(data)}`);
 
-export const updateContest = data => http.post('updateContest', data);
-// /contests/1
-// export const updateContest = (data) => http.patch(`contests/${}`, data);
+export const updateContest = data =>
+  http.patch(`contests/${data.get('contestId')}`, data);
 
 export const getTransactions = () => http.get('/users/id/transactions');

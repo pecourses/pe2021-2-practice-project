@@ -40,12 +40,6 @@ router.post(
 router.get('/downloadFile/:fileName', contestController.downloadFile);
 
 router.post(
-  '/updateContest',
-  upload.updateContestFile,
-  contestController.updateContest
-);
-
-router.post(
   '/setNewOffer',
   upload.uploadLogoFiles,
   basicMiddlewares.canSendOffer,
