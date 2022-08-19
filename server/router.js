@@ -37,12 +37,6 @@ router.post(
   userController.payment
 );
 
-router.post(
-  '/getAllContests',
-  basicMiddlewares.onlyForCreative,
-  contestController.getContests
-);
-
 router.get('/downloadFile/:fileName', contestController.downloadFile);
 
 router.post(

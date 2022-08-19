@@ -5,6 +5,13 @@ const contestController = require('../controllers/contestController');
 const contestsRouter = Router();
 
 contestsRouter.get(
+  '/',
+  basicMiddlewares.onlyForCreative,
+  basicMiddlewares.parseQuery,
+  contestController.getContests
+);
+
+contestsRouter.get(
   '/:contestId',
   basicMiddlewares.canGetContest,
   contestController.getContestById
