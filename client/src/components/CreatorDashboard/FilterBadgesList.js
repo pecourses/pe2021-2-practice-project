@@ -1,11 +1,11 @@
 import React from 'react';
 
-function FilterBaigeList ({ creatorFilter, changePredicate, baigesDataList }) {
-  const mapBaiges = (b, i) => (
+function FilterBadgesList ({ creatorFilter, changePredicate, badgesDataList }) {
+  const mapBadges = (b, i) => (
     <li key={b.filterName}>
       {creatorFilter[b.filterName] && (
         <span>
-          {b.baigeName}
+          {b.badgeName}
           <button
             onClick={() => {
               changePredicate({
@@ -21,7 +21,7 @@ function FilterBaigeList ({ creatorFilter, changePredicate, baigesDataList }) {
     </li>
   );
 
-  return <ul>{baigesDataList.map(mapBaiges)}</ul>;
+  return <ul>{badgesDataList.map(mapBadges)}</ul>;
 }
 
-export default FilterBaigeList;
+export default FilterBadgesList;

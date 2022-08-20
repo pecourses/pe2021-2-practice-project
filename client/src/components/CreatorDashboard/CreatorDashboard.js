@@ -14,7 +14,7 @@ import ContestsContainer from '../ContestsContainer/ContestsContainer';
 import ContestBox from '../ContestBox/ContestBox';
 import styles from './CreatorDashboard.module.sass';
 import TryAgain from '../TryAgain/TryAgain';
-import FilterBaigeList from './FilterBaigeList';
+import FilterBadgesList from './FilterBadgesList';
 
 const types = [
   '',
@@ -202,19 +202,19 @@ class CreatorDashboard extends React.Component {
     const { error, haveMore, creatorFilter } = this.props;
     const { isFetching } = this.props.dataForContest;
 
-    const baigesDataList = [
+    const badgesDataList = [
       {
-        baigeName: 'My Entries',
+        badgeName: 'My Entries',
         filterName: 'ownEntries',
         defaultValue: false,
       },
       {
-        baigeName: this.props.creatorFilter.contestId,
+        badgeName: this.props.creatorFilter.contestId,
         filterName: 'contestId',
         defaultValue: '',
       },
       {
-        baigeName: this.props.creatorFilter.industry,
+        badgeName: this.props.creatorFilter.industry,
         filterName: 'industry',
         defaultValue: '',
       },
@@ -280,10 +280,10 @@ class CreatorDashboard extends React.Component {
               </select>
             </div>
           </div>
-          <FilterBaigeList
+          <FilterBadgesList
             creatorFilter={this.props.creatorFilter}
             changePredicate={this.changePredicate}
-            baigesDataList={baigesDataList}
+            badgesDataList={badgesDataList}
           />
         </div>
         {error ? (
