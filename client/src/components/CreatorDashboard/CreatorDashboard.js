@@ -14,6 +14,7 @@ import ContestsContainer from '../ContestsContainer/ContestsContainer';
 import ContestBox from '../ContestBox/ContestBox';
 import styles from './CreatorDashboard.module.sass';
 import TryAgain from '../TryAgain/TryAgain';
+import FilterBaigeList from './FilterBaigeList';
 
 const types = [
   '',
@@ -60,7 +61,7 @@ class CreatorDashboard extends React.Component {
     const { creatorFilter } = this.props;
     const { industry } = this.props.dataForContest.data;
     array.push(
-      <option key={0} value={null}>
+      <option key={0} value=''>
         Choose industry
       </option>
     );
@@ -114,11 +115,11 @@ class CreatorDashboard extends React.Component {
   changePredicate = ({ name, value }) => {
     const { creatorFilter } = this.props;
     this.props.newFilter({
-      [name]: value === 'Choose industry' ? null : value,
+      [name]: value === 'Choose industry' ? '' : value,
     });
     this.parseParamsToUrl({
       ...creatorFilter,
-      ...{ [name]: value === 'Choose industry' ? null : value },
+      ...{ [name]: value === 'Choose industry' ? '' : value },
     });
   };
 
@@ -200,6 +201,25 @@ class CreatorDashboard extends React.Component {
   render () {
     const { error, haveMore, creatorFilter } = this.props;
     const { isFetching } = this.props.dataForContest;
+
+    const baigesDataList = [
+      {
+        baigeName: 'My Entries',
+        filterName: 'ownEntries',
+        defaultValue: false,
+      },
+      {
+        baigeName: this.props.creatorFilter.contestId,
+        filterName: 'contestId',
+        defaultValue: '',
+      },
+      {
+        baigeName: this.props.creatorFilter.industry,
+        filterName: 'industry',
+        defaultValue: '',
+      },
+    ];
+
     return (
       <div className={styles.mainContainer}>
         <div className={styles.filterContainer}>
@@ -260,6 +280,11 @@ class CreatorDashboard extends React.Component {
               </select>
             </div>
           </div>
+          <FilterBaigeList
+            creatorFilter={this.props.creatorFilter}
+            changePredicate={this.changePredicate}
+            baigesDataList={baigesDataList}
+          />
         </div>
         {error ? (
           <div className={styles.messageContainer}>
