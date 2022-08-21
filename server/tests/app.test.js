@@ -106,7 +106,23 @@ describe('Testing app', function () {
           })
           .catch(err => done(err));
       });
-      //
+      // 'response should be 408 'token error' when invalid token ('sdfsdf')
+      it('response should be 408 "token error" when invalid token', function (done) {
+        request(app)
+          .post('/auth/getUser')
+          .set('Authorization', 'token')
+          .expect(408)
+          .expect('token error')
+          .end(done);
+      });
+      // 'response should be 408 'need token' when token is missed
+      it('response should be 408 "need token" when token is missed', function (done) {
+        request(app)
+          .post('/auth/getUser')
+          .expect(408)
+          .expect('need token')
+          .end(done);
+      });
     });
   });
 });
