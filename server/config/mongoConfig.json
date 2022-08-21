@@ -3,6 +3,10 @@
     "database": "squadhelp-chat-dev",
     "host": "mongo-dev"
   },
+  "test": {
+    "database": "squadhelp-chat-test",
+    "host": "localhost"
+  },
   "production": {
     "database": "squadhelp-chat",
     "host": "localhost",

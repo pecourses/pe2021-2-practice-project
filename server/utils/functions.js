@@ -60,6 +60,8 @@ module.exports.mapStringToValues = v => {
       return null;
     case 'undefined':
       return undefined;
+    case 'NaN':
+      return NaN;
     default:
       return v;
   }
