@@ -25,10 +25,7 @@ const app = require('./../app');
 const userCredentials = { email: 'buyer@gmail.com', password: '123456' };
 
 const TOKEN_VALIDATION_SCHEMA = yup.object({
-  token: yup
-    .string()
-    // .matches(/^\w+\.\w+\.\w+$/)
-    .required(),
+  token: yup.string().required(),
 });
 
 describe('Testing app', function () {
@@ -106,7 +103,7 @@ describe('Testing app', function () {
           })
           .catch(err => done(err));
       });
-      // 'response should be 408 'token error' when invalid token ('sdfsdf')
+
       it('response should be 408 "token error" when invalid token', function (done) {
         request(app)
           .post('/auth/getUser')
@@ -115,7 +112,7 @@ describe('Testing app', function () {
           .expect('token error')
           .end(done);
       });
-      // 'response should be 408 'need token' when token is missed
+
       it('response should be 408 "need token" when token is missed', function (done) {
         request(app)
           .post('/auth/getUser')
